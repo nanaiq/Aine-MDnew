@@ -532,52 +532,52 @@ module.exports = {
                 if (typeof chat !== 'object') db.data.chats[m.chat] = {}
                 if (chat) {
                     if (!('isBanned' in chat)) chat.isBanned = false
-                    if (!('welcome' in chat)) chat.welcome = false
-                    if (!('detect' in chat)) chat.detect = false
+                    if (!('welcome' in chat)) chat.welcome = true
+                    if (!('detect' in chat)) chat.detect = true
                     if (!('sWelcome' in chat)) chat.sWelcome = ''
                     if (!('sBye' in chat)) chat.sBye = ''
                     if (!('sPromote' in chat)) chat.sPromote = ''
                     if (!('sDemote' in chat)) chat.sDemote = ''
-                    if (!('delete' in chat)) chat.delete = true
-                    if (!('antiLink' in chat)) chat.antiLink = false 
+                    if (!('delete' in chat)) chat.delete = false
+                    if (!('antiLink' in chat)) chat.antiLink = true
                     if (!('antiSticker' in chat)) chat.antiSticker = false
-                    if (!('stiker' in chat)) chat.stiker = false
+                    if (!('stiker' in chat)) chat.stiker = true
                     if (!('simi' in chat)) chat.simi = false
-                    if (!('mute' in chat)) chat.mute = true 
+                    if (!('mute' in chat)) chat.mute = false 
                     if (!('download' in chat)) chat.download = false 
-                    if (!('viewonce' in chat)) chat.viewonce = false
+                    if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('useDocument' in chat)) chat.useDocument = false
-                    if (!('antiToxic' in chat)) chat.antiToxic = false
+                    if (!('antiToxic' in chat)) chat.antiToxic = true
                     if (!isNumber(chat.expired)) chat.expired = 0
                 } else db.data.chats[m.chat] = {
                     isBanned: false,
-                    welcome: false,
-                    detect: false,
+                    welcome: true,
+                    detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    delete: true,
-                    antiLink: false,
-                    stiker: false,
+                    delete: false,
+                    antiLink: true,
+                    stiker: true,
                     simi: false,
-                    mute: true,
+                    mute: false,
                     download: false,
                     antiSticker: false,
-                    viewonce: false,
+                    viewonce: true,
                     useDocument: false,
-                    antiToxic: false,
+                    antiToxic: true,
                     expired: 0,
                 }
                 let settings = db.data.settings[this.user.jid]
                 if (typeof settings !== 'object') db.data.settings[this.user.jid] = {}
                 if (settings) {
 		            if (!'anticall' in settings) settings.anticall = true
-		            if (!'autoreset' in settings) settings.autoreset = true
+		            if (!'autoreset' in settings) settings.autoreset = false
 		            if (!isNumber(settings.autoresetTime)) settings.autoresetTime = (new Date() * 1) + 3600000 * 720
 		        } else db.data.settings[this.user.jid] = {
 		            anticall: true,
-		            autoreset: true,
+		            autoreset: false,
 		            autoresetTime: (new Date() * 1) + 3600000 * 720,
 		        }
             } catch (e) {
