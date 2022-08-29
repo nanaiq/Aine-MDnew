@@ -9,5 +9,6 @@ handler.help = ['cogan']
 handler.tags = ['internet']
 handler.command = /^(cogan)$/i
 handler.limit = true
+handler.premium = true
 
 module.exports = handler
