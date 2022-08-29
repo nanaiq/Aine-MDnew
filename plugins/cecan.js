@@ -9,5 +9,6 @@ handler.help = ['cecan']
 handler.tags = ['internet']
 handler.command = /^(cecan)$/i
 handler.limit = true
+handler.premium = true
 
 module.exports = handler
